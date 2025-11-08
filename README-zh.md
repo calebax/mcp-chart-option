@@ -21,6 +21,13 @@
 1. create_pie_chart_option
 2. create_line_chart_option
 3. create_column_chart_option
+4. create_area_chart_option
+5. create_bar_chart_option
+6. create_radar_chart_option
+7. create_funnel_chart_option
+8. create_histogram_chart_option
+9. create_scatter_chart_option
+10. create_boxplot_chart_option
 
 ## 集成使用
 

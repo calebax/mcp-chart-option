@@ -1,3 +1,10 @@
 export { pie } from "./pie.js";
 export { column } from "./column.js";
 export { line } from "./line.js";
+export { area } from "./area.js";
+export { bar } from "./bar.js";
+export { radar } from "./radar.js";
+export { funnel } from "./funnel.js";
+export { histogram } from "./histogram.js";
+export { scatter } from "./scatter.js";
+export { boxplot } from "./boxplot.js";

@@ -10,6 +10,13 @@ const CHART_TYPE_MAP = {
   create_pie_chart_option: "pie",
   create_column_chart_option: "column",
   create_line_chart_option: "line",
+  create_area_chart_option: "area",
+  create_bar_chart_option: "bar",
+  create_radar_chart_option: "radar",
+  create_funnel_chart_option: "funnel",
+  create_histogram_chart_option: "histogram",
+  create_scatter_chart_option: "scatter",
+  create_boxplot_chart_option: "boxplot",
 } as const;
 
 /**
