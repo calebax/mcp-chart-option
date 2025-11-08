@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { zodToJsonSchema } from "../utils/schema.js";
-import { LegendSchema, TitleSchema } from "./base.js";
+import { TitleSchema } from "./base.js";
 
 const data = z.object({
   name: z.string().describe("Name of the category or segment."),

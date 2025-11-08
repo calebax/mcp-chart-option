@@ -28,10 +28,29 @@ export function buildColumnOption(args: Record<string, any>) {
     data: categories.map((c) => map.get(g)?.get(c) ?? 0),
   }));
 
+  const axisTitle = {
+    nameLocation: "middle",
+    nameTextStyle: {
+      fontSize: 14,
+      fontWeight: 600,
+    },
+  };
+
+  args.axisXTitle = args.axisXTitle
+    ? { name: args.axisXTitle, nameGap: 30, ...axisTitle }
+    : {};
+  args.axisYTitle = args.axisYTitle
+    ? { name: args.axisYTitle, nameGap: 60, ...axisTitle }
+    : {};
+
   return {
+    legend: {
+      right: "right",
+      top: 35,
+    },
     tooltip: { trigger: "axis" },
-    xAxis: { type: "category", data: categories },
-    yAxis: { type: "value" },
+    xAxis: { type: "category", data: categories, ...args.axisXTitle },
+    yAxis: { type: "value", ...args.axisYTitle },
     series,
   };
 }

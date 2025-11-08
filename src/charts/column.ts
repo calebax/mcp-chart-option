@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { zodToJsonSchema } from "../utils/schema.js";
-import { TitleSchema } from "./base.js";
+import { TitleSchema, AxisXTitleSchema, AxisYTitleSchema } from "./base.js";
 
 // Column chart data schema
 const data = z.object({
@@ -31,6 +31,8 @@ const schema = {
     .describe(
       "Whether stacking is enabled. When enabled, column charts require a 'group' field in the data. When `stack` is true, `group` should be false."
     ),
+  axisXTitle: AxisXTitleSchema,
+  axisYTitle: AxisYTitleSchema,
 };
 const tool = {
   name: "create_column_chart_option",

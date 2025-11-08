@@ -26,8 +26,8 @@ class EChartsOptionBuilder implements ChartOptionBuild {
 
 function buildBaseOption(args: Record<string, any>) {
   return {
-    title: args.title ?? {},
-    legend: args.legend ?? {},
+    title: args.title ? { text: args.title, left: "left" } : {},
+    legend: {},
   };
 }
 
