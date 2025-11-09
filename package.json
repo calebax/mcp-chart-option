@@ -1,57 +1,60 @@
 {
-  "name": "mcp-chart-option",
-  "version": "0.0.1",
-  "license": "MIT",
-  "type": "module",
-  "main": "build/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/calebax/mcp-chart-option"
-  },
-  "scripts": {
-    "clean": "rm -rf build/*",
-    "build": "npm run clean && tsc && tsc-alias -p tsconfig.json",
-    "start": "npm run build && npx @modelcontextprotocol/inspector node build/index.js",
-    "prepare": "husky && npm run build"
-  },
-  "lint-staged": {
-    "*.{ts,js,json}": [
-      "biome check --write",
-      "biome format --write",
-      "biome lint"
-    ]
-  },
-  "bin": {
-    "mcp-chart-option": "./build/index.js"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
-  "files": [
-    "build"
-  ],
-  "keywords": [
-    "mcp",
-    "chart",
-    "echarts"
-  ],
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.21.0",
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "zod": "^3.25.76",
-    "zod-to-json-schema": "^3.24.6"
-  },
-  "devDependencies": {
-    "@modelcontextprotocol/inspector": "^0.17.2",
-    "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.5",
-    "@types/node": "^24.10.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.2.6",
-    "ts-node": "^10.9.2",
-    "tsc-alias": "^1.8.16",
-    "typescript": "^5.9.3"
-  }
+	"name": "mcp-chart-option",
+	"version": "0.0.1",
+	"license": "MIT",
+	"type": "module",
+	"main": "build/index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/calebax/mcp-chart-option"
+	},
+	"scripts": {
+		"prebuild": "rm -rf build/*",
+		"build": "tsc && tsc-alias -p tsconfig.json",
+		"postbuild": "chmod +x build/index.js",
+		"start": "npm run build && npx @modelcontextprotocol/inspector node build/index.js",
+		"prepare": "husky && npm run build",
+		"prepublishOnly": "npm run build"
+	},
+	"lint-staged": {
+		"*.{ts,js,json}": [
+			"biome check --write",
+			"biome format --write",
+			"biome lint"
+		]
+	},
+	"bin": {
+		"mcp-chart-option": "./build/index.js"
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/",
+		"access": "public"
+	},
+	"files": [
+		"build"
+	],
+	"keywords": [
+		"mcp",
+		"chart",
+		"echarts"
+	],
+	"dependencies": {
+		"@modelcontextprotocol/sdk": "^1.21.0",
+		"cors": "^2.8.5",
+		"express": "^5.1.0",
+		"zod": "^3.25.76",
+		"zod-to-json-schema": "^3.24.6"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.3.4",
+		"@modelcontextprotocol/inspector": "^0.17.2",
+		"@types/cors": "^2.8.19",
+		"@types/express": "^5.0.5",
+		"@types/node": "^24.10.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.6",
+		"ts-node": "^10.9.2",
+		"tsc-alias": "^1.8.16",
+		"typescript": "^5.9.3"
+	}
 }
